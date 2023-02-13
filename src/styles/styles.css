@@ -1,0 +1,14 @@
+body {
+  background-color: mediumpurple;
+}
+#photo_list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.photo_card_item {
+  padding: 10px;
+}
+.photo_card_item img {
+  border-radius: 30px;
+}

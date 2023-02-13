@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "BackgroundChanger",
+  "version": "1.0",
+  "description": "__",
+  "icons": {
+    "16": "src/assets/images/icon-16.png",
+    "32": "src/assets/images/icon-16.png",
+    "48": "src/assets/images/icon-16.png",
+    "128": "src/assets/images/icon-16.png"
+  },
+  "permissions": ["activeTab", "storage", "tabs", "webNavigation", "identity"],
+  "background": {
+    "service_worker": "./src/scripts/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["./src/scripts/content.js"]
+    }
+  ],
+  "chrome_url_overrides": {
+    "newtab": "myPage.html"
+  },
+  "oauth2": {
+    "client_id": "552817832002-a702o4qvnsj0s860f9of6aaf5fu1q60v.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/drive",
+      "https://www.googleapis.com/auth/photoslibrary.readonly",
+      "https://www.googleapis.com/auth/contacts.readonly",
+      "https://www.googleapis.com/auth/photoslibrary.readonly",
+      "profile"
+    ]
+  }
+}
